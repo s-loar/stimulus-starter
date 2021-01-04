@@ -8,26 +8,31 @@
 <body>
   <h1 data-controller="example"></h1>
 
+  <h2>Greeting build from user input</h2>
   <div data-controller="hello">
     <input data-hello-target="name" type="text">
     <button data-action="click->hello#greet">Greet</button>
   </div>
 
+  <h2>Button to trigger a shared controller action</h2>
   <div data-controller="clipboard">
     PIN: <input data-clipboard-target="source" type="text" value="1234" readonly>
     <button data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</button>
   </div>
 
+  <h2>Button to trigger a shared controller action</h2>
   <div data-controller="clipboard">
     PIN: <input data-clipboard-target="source" type="text" value="3737" readonly>
     <button data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</button>
   </div>
 
+  <h2>Link to trigger a shared controller action with display state</h2>
   <div data-controller="clipboard">
     PIN: <textarea data-clipboard-target="source" readonly>45678</textarea>
     <a href="#" data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</a>
   </div>
 
+  <h2>Slideshow with State in an attribute</h2>
   <div data-controller="slideshow" data-slideshow-index-value="1">
     <button data-action="slideshow#previous"> ← </button>
     <button data-action="slideshow#next"> → </button>
@@ -37,6 +42,11 @@
     <div data-slideshow-target="slide">🙉</div>
     <div data-slideshow-target="slide">🙊</div>
   </div>
+
+  <h2>Asynchronously load HTML and a timed refresh of that data</h2>
+  <div data-controller="content-loader"
+     data-content-loader-url-value="/messages.html"
+     data-content-loader-refresh-interval-value="5000"></div>
 
 </body>
 </html>
